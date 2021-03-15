@@ -1,28 +1,53 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>HongKong Kitchen</h1>
+    <ul>
+      <li class="nav"><router-link to="/" exact>Home</router-link></li>
+      <li class="nav"><router-link to="/orders" exact>Orders</router-link></li>
+      <li class="nav">
+        <router-link to="/dashboard" exact>Dashboard</router-link>
+      </li>
+    </ul>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  data() {
+    return {};
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+h1 {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-size: 50px;
+  background: lightblue;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav {
+  flex-grow: 1;
+  flex-basis: 300px;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #222;
+  margin: 10px;
+}
+
+button {
+  width: 65px;
+  height: 30px;
+  background-color: #f7cac9;
+  border-radius: 10px;
+  border-width: 1px;
 }
 </style>
